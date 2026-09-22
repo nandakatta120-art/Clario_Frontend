@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --auth-bg-page: #EEF1FA;
+    --auth-bg-brand: #33409E;
+    --auth-bg-brand-to: #2C3688;
+    --auth-bg-form: #FFFFFF;
+    --auth-primary: #33409E;
+    --auth-primary-hover: #2C3688;
+    --auth-accent-mid: #7B8AE0;
+    --auth-text-brand-heading: #F8FAFC;
+    --auth-text-brand-body: #C3CBEF;
+    --auth-text-form-heading: #33409E;
+    --auth-text-form-body: #64748B;
+  }
+
+  body {
+    @apply bg-[#EEF1FA] text-slate-900 font-sans antialiased min-h-screen selection:bg-[#33409E]/30 selection:text-slate-900;
+  }
+}
+
+/* Professional Enterprise Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+/* Hide scrollbars where appropriate while preserving scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.canvas-container {
+  margin: 0 auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Glass Sheen Sweep Animation */
+@keyframes glassSheen {
+  0% { transform: translateX(-150%) skewX(-20deg); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateX(250%) skewX(-20deg); opacity: 0; }
+}
+
+.animate-glass-sheen {
+  animation: glassSheen 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating Mesh Blob Animations */
+@keyframes floatBlob1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(40px, -50px) scale(1.08); }
+  66% { transform: translate(-30px, 30px) scale(0.94); }
+}
+
+@keyframes floatBlob2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(-45px, 40px) scale(1.06); }
+  66% { transform: translate(35px, -40px) scale(0.92); }
+}
+
+@keyframes floatBlob3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(25px, 35px) scale(1.1); }
+}
+
+.animate-float-blob-1 {
+  animation: floatBlob1 18s ease-in-out infinite;
+}
+
+.animate-float-blob-2 {
+  animation: floatBlob2 22s ease-in-out infinite;
+}
+
+.animate-float-blob-3 {
+  animation: floatBlob3 15s ease-in-out infinite;
+}
+
+/* Error Shake Animation */
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: errorShake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* SVG Checkmark Draw Animation */
+@keyframes checkmarkDraw {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-draw-check {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 0;
+  animation: checkmarkDraw 0.4s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
